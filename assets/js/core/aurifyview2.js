@@ -258,7 +258,7 @@ async function fetchData1() {
 
 async function readSpreadValues() {
     try {
-        const uid = 'LnpQA4ZFsEPRbLul1zDTFj5tWvn1';
+        const uid = 'Tm9O3jd5jHMX4YGkIecSZcDMG5m1';
         if (!uid) {
             console.error('User not authenticated');
             throw new Error('User not authenticated');
@@ -304,7 +304,7 @@ displaySpreadValues();
 // Function to read data from the Firestore collection
 async function readData() {
     // Get the UID of the authenticated user
-    const uid = 'LnpQA4ZFsEPRbLul1zDTFj5tWvn1';
+    const uid = 'Tm9O3jd5jHMX4YGkIecSZcDMG5m1';
 
     if (!uid) {
         console.error('User not authenticated');
