@@ -46,7 +46,7 @@
         align-items: center;
       }
 
-      .main-content{
+      .main-content {
         margin-top: 20%;
       }
     }
@@ -227,12 +227,13 @@
 
 <body class="d-flex justify-content-center align-items-center">
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <div class="col-lg-4 d-flex justify-content-center" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div class="col-lg-4 d-flex justify-content-center"
+      style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <img class="logo" src="./Radia logo.png" alt="" style="width: auto; margin-top:5px; height: 100px;">
       <img src="./radia.png" alt="" style="width: auto; height: 50px;">
     </div>
     <!-- Navbar -->
-    <nav class="d-flex justify-content-center"> 
+    <nav class="d-flex justify-content-center">
       <div id="navbar">
         <ul class="navbar-nav  ">
           <li class="nav-item d-flex align-items-center">
@@ -471,7 +472,13 @@
 
   </script>
 
-
+  <script>
+    // Check if the screen width is below a certain threshold (e.g., 1000 pixels)
+    if (window.innerWidth > 900) {
+      // Redirect users from mobile and tablet devices to a different page or show an error message
+      window.location.href = '../../../pages/error.html'; // Redirect to a mobile error page
+    }
+  </script>
 
 
 
