@@ -91,15 +91,6 @@
       font-weight: 600;
     }
 
-    .card-table{
-      background-color: #fff;
-      opacity: 80%;
-      padding: 15px;
-      margin: 25px 0px;
-      width: 100%;
-      border-radius: 15px;
-    }
-
     .data {
       display: flex;
       flex-direction: row;
@@ -136,6 +127,15 @@
 
     .data .buy-sell label {
       font-size: 25px;
+    }
+
+    .card-table {
+      background-color: #fff;
+      opacity: 80%;
+      padding: 15px;
+      margin: 25px -10px;
+      width: 100%;
+      border-radius: 15px;
     }
 
     table {
@@ -344,16 +344,15 @@
         </div>
 
 
-      </div>
-      
-      <div class="col-lg-12 card-table">
-        <table>
+
+
+        <table class="mt-3">
           <thead style="margin-bottom: 0px;" class="col-md-12">
-            <tr class="col-md-12" style="font-size: 12px;">
-              <th class="col-md-3" colspan="2">COMMODITY</th>
-              <th class="col-md-3">UNIT</th>
-              <th class="col-md-3">BUY (<span id="currencySymbol">AED</span>)</th>
-              <th class="col-md-3">SELL (<span id="currencySymbol">AED</span>)</th>
+            <tr style="font-size: 12px;">
+              <th colspan="2">COMMODITY</th>
+              <th>UNIT</th>
+              <th>BUY (<span id="currencySymbol">AED</span>)</th>
+              <th>SELL (<span id="currencySymbol">AED</span>)</th>
             </tr>
             <tr style="height: 8px;background-color: transparent;"></tr>
           </thead>
@@ -362,8 +361,6 @@
             <!-- Table body content will be dynamically updated here -->
           </tbody>
         </table>
-      </div>
-    </div>
   </main>
 
 
