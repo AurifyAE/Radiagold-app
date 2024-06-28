@@ -44,7 +44,7 @@
       padding: 0px 300px;
       font-family: "arial", Helvetica, sans-serif;
       font-size: 24px;
-      background-image: url('./5961.jpg');
+      background-image: url('./10861.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
@@ -64,7 +64,19 @@
       margin-top: 50px;
     }
 
-    .date-time {
+    #time,
+    #date {
+      color: #fff;
+      font-size: 30px;
+    }
+
+    #day {
+      color: #fff;
+      font-size: 45px;
+    }
+
+    .fa-calendar,
+    .fa-clock {
       color: #fff;
       font-size: 30px;
     }
@@ -73,7 +85,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      background-color: #B8860B;
+      background-color: #E3A200;
       width: 100%;
       padding: 10px;
       border-radius: 15px;
@@ -96,11 +108,12 @@
       flex-direction: row;
       justify-content: space-between;
       background-color: #fff;
-      opacity: 80%;
+      opacity: 100%;
       width: 100%;
       padding: 20px;
       border-radius: 15px;
       margin-top: 10px;
+      border: 3px solid #E3A200;
     }
 
     .data .label {
@@ -113,7 +126,7 @@
     .data .label p {
       font-size: 35px;
       font-weight: 600;
-      color: #B8860B;
+      color: #E3A200;
     }
 
     .data .buy-sell .input-box {
@@ -135,31 +148,81 @@
     }
 
     table thead tr {
-      background-color: #696969;
+      background-color: #E3A200;
     }
 
     table thead tr th {
       font-size: 22px;
-      color: #DAA520;
+      color: black;
       padding: 10px;
     }
 
+    table thead tr th:first-child {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    table thead tr th:last-child {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
     table tr {
-      background-color: #b0b0b0;
+      background-color: #fff;
       /* Light gray background for odd rows */
     }
 
     table tbody tr:nth-child(even) {
-      background-color: #c5c5c5;
+      background-color: transparent;
       /* Dark gray background for even rows */
+    }
+
+    table tbody tr td:first-child {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    table tbody tr td:last-child {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
     }
 
     table tbody tr td {
       font-size: 22px;
-      font-weight: 600;
+      font-weight: 700;
       padding: 10px;
-      color: #fff;
+      color: black;
     }
+
+    .news-container {
+      width: 100%;
+      overflow: hidden;
+      background-color: #E3A200;
+      border-radius: 15px;
+    }
+
+    .news-content {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    #displayNews {
+      display: inline-block;
+      padding-right: 20px;
+      animation: scrollLeft 15s linear infinite;
+      color: black;
+    }
+
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
 
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {
@@ -169,10 +232,24 @@
 
       .logo {
         width: 120px;
-        margin-top: 50px;
+        margin-top: 20px;
       }
 
-      .date-time {
+
+      #date {
+        font-size: 15px;
+      }
+
+      #time {
+        font-size: 20px;
+      }
+
+      #day {
+        font-size: 20px;
+      }
+
+      .fa-calendar,
+      .fa-clock {
         color: #fff;
         font-size: 18px;
       }
@@ -212,7 +289,7 @@
 
       table tbody tr td {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 600;
         padding: 7px;
       }
     }
@@ -249,37 +326,44 @@
 
 <body class="d-flex justify-content-center align-items-center">
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <div class="col-lg-12 d-flex justify-content-center"
-      style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      <img class="logo" src="./Radia logo.png" alt="">
-      <img src="./radia.png" alt="" style="width: auto; height: 50px;">
-    </div>
-    <!-- Navbar -->
-    <nav class="d-flex justify-content-center">
-      <div id="navbar">
-        <ul class="navbar-nav  ">
-          <li class="nav-item d-flex align-items-center">
-            <div class="btn btn-outline btn-sm" target="_blank"><span id='time' class="date-time"></span></div>
-          </li>
-        </ul>
+    <div
+      style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 0px 25px;">
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <i class="fa-regular fa-calendar"></i>
+        <div id="date"></div>
+        <div id="day"></div>
       </div>
-    </nav>
-    <!-- End Navbar -->
+      <div>
+        <img class="logo" src="./Radia logo.png" alt="">
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <i class="fa-regular fa-clock"></i>
+        <div id="time"></div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <img src="./100.png" alt="" style="width: auto; height: 25px;">
+    </div>
+
+
     <div class="container-fluid pt-0">
-      <div class="row">
+      <div class="row mt-3">
         <div class="symbols">
           <div></div>
           <div class="buy-sell-label">
-            <p style="color: black;">BUY</p>
+            <p style="color: black;">BID</p>
             <div>
               <i class="fa-solid fa-dollar-sign icon" style="color: black;"></i>
             </div>
+            <p style="color: black;">(SELL)</p>
           </div>
           <div class="buy-sell-label">
-            <p style="color: black;">SELL</p>
+            <p style="color: black;">ASK</p>
             <div>
               <i class="fa-solid fa-dollar-sign icon" style="color: black;"></i>
             </div>
+            <p style="color: black;">(BUY)</p>
           </div>
         </div>
 
@@ -307,7 +391,7 @@
         </div>
 
         <!-- silver -->
-        <div class="data silver">
+        <div class="data silver" style="display: none;">
           <div class=" label">
             <p>Silver</p>
             <h5 style="color: black;">oz</h5>
@@ -329,16 +413,14 @@
           </div>
         </div>
 
-
-
-
         <table class="mt-3">
           <thead style="margin-bottom: 0px;" class="col-md-12">
             <tr style="font-size: 12px;">
               <th colspan="2">COMMODITY</th>
               <th>UNIT</th>
-              <th>BUY (<span id="currencySymbol">AED</span>)</th>
-              <th>SELL (<span id="currencySymbol">AED</span>)</th>
+              <!-- <th>BUY (<span id="currencySymbol">AED</span>)</th> -->
+               <th></th>
+              <th>SELL</th>
             </tr>
             <tr style="height: 8px;background-color: transparent;"></tr>
           </thead>
@@ -347,6 +429,12 @@
             <!-- Table body content will be dynamically updated here -->
           </tbody>
         </table>
+
+        <div class="news-container">
+          <div class="news-content" id="newsContent">
+            <span id="displayNews"></span>
+          </div>
+        </div>
   </main>
 
 
@@ -388,182 +476,12 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
   <script type="module" src="./config/db.js"></script>
+  <script type="module" defer src="./assets/js/core/displayNews.js"></script>
   <script type="module" src="./assets/js/core/dashboardDB.js"></script>
   <script type="module" src="./assets/js/core/spotrateDB.js"></script>
   <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
 
-
-  <script>
-    var ctx = document.getElementById("chart-bars").getContext("2d");
-
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Sales",
-          tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "#fff",
-          data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
-          maxBarThickness: 6
-        },],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 15,
-              font: {
-                size: 14,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-              color: "#fff"
-            },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false
-            },
-            ticks: {
-              display: false
-            },
-          },
-        },
-      },
-    });
-
-
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
-
-    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
-
-    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Gold",
-          tension: 0.4,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#cb0c9f",
-          borderWidth: 3,
-          backgroundColor: gradientStroke1,
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
-
-        },
-        {
-          label: "Silver",
-          tension: 0.4,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#3A416F",
-          borderWidth: 3,
-          backgroundColor: gradientStroke2,
-          fill: true,
-          data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-          maxBarThickness: 6
-        },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#b2b9bf',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#b2b9bf',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-  </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -579,15 +497,32 @@
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
   <!-- Date & Time -->
   <script>
-    `use strict`;
-    function refreshTime() {
-      const timeDisplay = document.getElementById("time");
-      const dateString = new Date().toLocaleString();
-      const formattedString = dateString.replace(", ", " - ");
-      timeDisplay.textContent = formattedString;
-    }
-    setInterval(refreshTime, 1000);
+    function displayDateTime() {
+      const now = new Date();
 
+      // Display time with AM/PM (meridian) format
+      const timeElement = document.getElementById('time');
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const meridian = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12; // Convert hours from 24-hour to 12-hour format
+      const formattedTime = `${hours}:${minutes} ${meridian}`;
+      timeElement.textContent = formattedTime;
+      // Display date
+      const dateElement = document.getElementById('date');
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      dateElement.textContent = now.toLocaleDateString('en-US', options);
+
+      // Display day of the week
+      const dayElement = document.getElementById('day');
+      dayElement.textContent = now.toLocaleDateString('en-US', { weekday: 'long' });
+    }
+
+    // Update the time every second
+    setInterval(displayDateTime, 1000);
+
+    // Initialize on page load
+    window.onload = displayDateTime;
   </script>
 
   <!-- <script>
@@ -597,10 +532,6 @@
       window.location.href = '../../../pages/error.html'; // Redirect to a mobile error page
     }
   </script> -->
-
-
-
-
 </body>
 
 </html>
