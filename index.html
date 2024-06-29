@@ -124,7 +124,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 15px 5px;
+      padding: 0px 0px;
       width: 50%;
     }
 
@@ -135,10 +135,10 @@
       align-items: center;
       font-size: 35px;
       font-weight: 600;
-      padding: 15px;
+      padding: 10px;
     }
 
-    .spotrate .data .buy-sell label {
+    .spotrate .data .buy-sell label, span {
       font-size: 25px;
     }
 
@@ -270,7 +270,7 @@
         padding: 10px;
       }
 
-      .spotrate .data .buy-sell label {
+      .spotrate .data .buy-sell label, span {
         font-size: 15px;
       }
 
@@ -365,7 +365,8 @@
             <div class="buy-sell">
               <div class="form-control input-box" id="goldInputLow"></div>
               <div>
-                <i class="fa-solid fa-caret-down icon" style="color: red;"></i>
+                <!-- <i class="fa-solid fa-caret-down icon" style="color: red;"></i> -->
+                <span style="color: red;">LOW</span>
                 <label id="lowLabelGold">0</label>
               </div>
             </div>
@@ -375,7 +376,8 @@
             <div class="buy-sell">
               <div class="form-control input-box" id="goldInputHigh"></div>
               <div>
-                <i class="fa-solid fa-caret-up icon" style="color: green;"></i>
+                <!-- <i class="fa-solid fa-caret-up icon" style="color: green;"></i> -->
+                <span style="color: green;">HIGH</span>
                 <label id="highLabelGold">0</label>
               </div>
             </div>
