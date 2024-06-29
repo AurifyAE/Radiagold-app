@@ -44,9 +44,10 @@
       padding: 0px 300px;
       font-family: "arial", Helvetica, sans-serif;
       font-size: 24px;
-      background-image: url('./10861.jpg');
+      background-image: url('./5961.jpg');
       background-repeat: no-repeat;
       background-size: cover;
+      /* background-color: #0F1225; */
       background-attachment: fixed;
       /* Prevent background from scrolling */
       -webkit-animation: 20s linear 0s normal none infinite animate;
@@ -72,7 +73,8 @@
 
     #day {
       color: #fff;
-      font-size: 45px;
+      font-size: 30px;
+      text-transform: uppercase;
     }
 
     .fa-calendar,
@@ -81,55 +83,53 @@
       font-size: 30px;
     }
 
-    .symbols {
+    .timeZone {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      background-color: #E3A200;
-      width: 100%;
-      padding: 10px;
-      border-radius: 15px;
-      height: 60px;
+      padding: 0px 20px;
+      margin-top: 20px;
     }
 
-    .symbols .buy-sell-label {
+    .timeZone .county-day-time {
       display: flex;
-      flex-direction: row;
-    }
-
-    .symbols .buy-sell-label p {
-      color: #fff;
-      font-size: 25px;
-      font-weight: 600;
-    }
-
-    .data {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      background-color: #fff;
-      opacity: 100%;
-      width: 100%;
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 10px;
-      border: 3px solid #E3A200;
-    }
-
-    .data .label {
-      display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
 
-    .data .label p {
-      font-size: 35px;
-      font-weight: 600;
-      color: #E3A200;
+    .timeZone .county-day-time img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
     }
 
-    .data .buy-sell .input-box {
+    .timeZone .county-day-time span {
+      font-size: x-large;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .spotrate {
+      display: flex;
+      flex-direction: row;
+      background-color: #fff;
+      justify-content: space-between;
+      border-radius: 15px;
+      border: 3px solid #E3A200;
+      width: 100%;
+    }
+
+    .spotrate .data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 5px;
+      width: 50%;
+    }
+
+
+    .spotrate .data .buy-sell .input-box {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -138,7 +138,7 @@
       padding: 15px;
     }
 
-    .data .buy-sell label {
+    .spotrate .data .buy-sell label {
       font-size: 25px;
     }
 
@@ -245,7 +245,7 @@
       }
 
       #day {
-        font-size: 20px;
+        font-size: 16px;
       }
 
       .fa-calendar,
@@ -254,31 +254,23 @@
         font-size: 18px;
       }
 
-      .symbols {
-        height: 50px;
+      .timeZone .county-day-time img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
       }
 
-      .symbols .buy-sell-label .icon,
-      .symbols .buy-sell-label p {
-        font-size: 18px;
+      .timeZone .county-day-time span {
+        font-size: 13px;
       }
 
-      .symbols .buy-sell-label .icon {
-        margin-bottom: 6px;
-      }
 
-      .data .label p,
-      .data .label h5 {
-        font-size: 18px;
-        font-weight: 500;
-      }
-
-      .data .buy-sell .input-box {
+      .spotrate .data .buy-sell .input-box {
         font-size: 20px;
         padding: 10px;
       }
 
-      .data .buy-sell label {
+      .spotrate .data .buy-sell label {
         font-size: 15px;
       }
 
@@ -346,49 +338,50 @@
       <img src="./100.png" alt="" style="width: auto; height: 25px;">
     </div>
 
+    <div class="timeZone">
+      <div class="county-day-time">
+        <img src="./UAE.png" alt="" srcset="">
+        <span id="localTimeString"></span>
+        <span id="localDayString"></span>
+      </div>
+      <div class="county-day-time">
+        <img src="./Bangladesh.jpg" alt="" srcset="">
+        <span id="bangladeshTimeString"></span>
+        <span id="bangladeshDayString"></span>
+      </div>
+      <div class="county-day-time">
+        <img src="./US.png" alt="" srcset="">
+        <span id="usTimeString"></span>
+        <span id="usDayString"></span>
+      </div>
+    </div>
+
 
     <div class="container-fluid pt-0">
       <div class="row mt-3">
-        <div class="symbols">
-          <div></div>
-          <div class="buy-sell-label">
-            <p style="color: black;">BID</p>
-            <div>
-              <i class="fa-solid fa-dollar-sign icon" style="color: black;"></i>
-            </div>
-            <p style="color: black;">(SELL)</p>
-          </div>
-          <div class="buy-sell-label">
-            <p style="color: black;">ASK</p>
-            <div>
-              <i class="fa-solid fa-dollar-sign icon" style="color: black;"></i>
-            </div>
-            <p style="color: black;">(BUY)</p>
-          </div>
-        </div>
-
-
-        <!-- GOLD -->
-        <div class="data gold">
-          <div class="label">
-            <p>Gold</p>
-            <h5 style="color: black;">oz</h5>
-          </div>
-          <div class="buy-sell">
-            <div class="form-control input-box" id="goldInputLow"></div>
-            <div>
-              <i class="fa-solid fa-caret-down icon" style="color: red;"></i>
-              <label id="lowLabelGold">0</label>
+        <div class="spotrate">
+          <div class="data" style="border-right: 3px solid #E3A200;">
+            <span style="font-size: 16px; color: black; font-weight: 600;">GOLD BID (SELL)</span>
+            <div class="buy-sell">
+              <div class="form-control input-box" id="goldInputLow"></div>
+              <div>
+                <i class="fa-solid fa-caret-down icon" style="color: red;"></i>
+                <label id="lowLabelGold">0</label>
+              </div>
             </div>
           </div>
-          <div class="buy-sell">
-            <div class="form-control input-box" id="goldInputHigh"></div>
-            <div>
-              <i class="fa-solid fa-caret-up icon" style="color: green;"></i>
-              <label id="highLabelGold">0</label>
+          <div class="data">
+            <span style="font-size: 16px; color: black; font-weight: 600;">GOLD ASK (BUY)</span>
+            <div class="buy-sell">
+              <div class="form-control input-box" id="goldInputHigh"></div>
+              <div>
+                <i class="fa-solid fa-caret-up icon" style="color: green;"></i>
+                <label id="highLabelGold">0</label>
+              </div>
             </div>
           </div>
         </div>
+
 
         <!-- silver -->
         <div class="data silver" style="display: none;">
@@ -522,6 +515,57 @@
 
     // Initialize on page load
     window.onload = displayDateTime;
+  </script>
+
+  <script>
+    function getCurrentTimeAndDay() {
+      // Function to format time with seconds and meridian
+      const formatTime = (date) => {
+        return date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+      };
+
+      // Function to format date with day (weekday)
+      const formatDay = (date) => {
+        return date.toLocaleDateString([], { weekday: 'long' });
+      };
+
+      // Function to update times and days and display
+      const updateTimeAndDay = () => {
+        // Get current UTC time
+        const now = new Date();
+
+        // US Eastern Time (GMT-4)
+        const usTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+        const usTimeString = formatTime(usTime);
+        const usDayString = formatDay(usTime);
+
+        // Bangladesh Time (GMT+6)
+        const bangladeshTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Dhaka' }));
+        const bangladeshTimeString = formatTime(bangladeshTime);
+        const bangladeshDayString = formatDay(bangladeshTime);
+
+        // Local Time
+        const localTimeString = formatTime(now);
+        const localDayString = formatDay(now);
+
+        // Update the displayed times and days
+        document.getElementById('localTimeString').textContent = localTimeString;
+        document.getElementById('localDayString').textContent = localDayString;
+        document.getElementById('bangladeshTimeString').textContent = bangladeshTimeString;
+        document.getElementById('bangladeshDayString').textContent = bangladeshDayString;
+        document.getElementById('usTimeString').textContent = usTimeString;
+        document.getElementById('usDayString').textContent = usDayString;
+      };
+
+      // Call updateTimeAndDay initially
+      updateTimeAndDay();
+
+      // Set interval to update every second (1000 milliseconds)
+      setInterval(updateTimeAndDay, 1000);
+    }
+
+    // Example usage
+    getCurrentTimeAndDay();
   </script>
 
   <!-- <script>

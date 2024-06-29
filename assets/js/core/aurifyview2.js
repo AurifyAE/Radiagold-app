@@ -449,7 +449,7 @@ async function showTable() {
             const newRow = document.createElement("tr");
             newRow.innerHTML = `
                 <td colspan="2" style="text-align: center;">${metal}<span style="font-size:10px; font-weight: 600;">${purity}</span></td>
-                <td>${unitInput} ${weightInput}</td>
+                <td style="text-align: center;">${unitInput} ${weightInput}</td>
                 <td id="sellAED_${i}" style="text-align: center;">0</td>
             `;
 
