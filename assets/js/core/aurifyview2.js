@@ -430,18 +430,29 @@ async function showTable() {
             const sellPremiumInputAED = data.sellPremiumAED || 0;
             const buyPremiumInputAED = data.buyPremiumAED || 0;
 
+
+            // Adjust metalInput based on weightInput
+            let metal, purity;
+
+            if (weightInput === "KG") {
+                metal = "Kilobar";
+                purity = purityInput;
+            } else if (metalInput === "Gold TEN TOLA") {
+                metal = "TEN TOLA";
+                purity = '';
+            } else {
+                metal = metalInput;
+                purity = purityInput;
+            }
+
             // Create a new table row
             const newRow = document.createElement("tr");
             newRow.innerHTML = `
-                <td colspan="2" style="text-align: center;" id="metalInput">${metalInput}<span style="font-size:10px; font-weight: 600;">${purityInput}</span></td>
+                <td colspan="2" style="text-align: center;">${metal}<span style="font-size:10px; font-weight: 600;">${purity}</span></td>
                 <td>${unitInput} ${weightInput}</td>
-                <td>AED</td>
-                <td id="sellAED_${i}">0</td>
+                <td id="sellAED_${i}" style="text-align: center;">0</td>
             `;
 
-            //
-            // <td style="text-align: left; font-size:10px; font-weight: 600;"></td>
-            // <td id="buyAED_${i}">0</td>
             // Append the new row to the table body
             tableBody.appendChild(newRow);
 
@@ -475,7 +486,6 @@ async function showTable() {
                 let askSpreadValue = parseFloat(askSpread);
                 let bidSpreadValue = parseFloat(bidSpread);
 
-
                 if (weight === 'GM') {
                     // Update the sellAED and buyAED values for the current row
                     const sellAEDValue = ((parseFloat(goldValue) + askSpreadValue + 0.5) * unitInput * unitMultiplier * (purityInput / Math.pow(10, purityInput.length)) + sellPremium).toFixed(2);
@@ -505,4 +515,3 @@ async function showTable() {
         console.error('Error reading data:', error);
     }
 }
-
