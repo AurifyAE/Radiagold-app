@@ -1,2 +1,1 @@
-# Radiagold-app
-https://aurifyae.github.io/radiagold-app/
+https://aurifyae.github.io/Radiagold-app/
