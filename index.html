@@ -14,6 +14,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <!-- Socket -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -36,8 +38,6 @@
   <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
   <link href="/assets/css/style.css" rel="stylesheet">
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
   <style>
     body {
       margin: 0;
@@ -138,7 +138,8 @@
       padding: 10px;
     }
 
-    .spotrate .data .buy-sell label, span {
+    .spotrate .data .buy-sell label,
+    span {
       font-size: 25px;
     }
 
@@ -270,7 +271,8 @@
         padding: 10px;
       }
 
-      .spotrate .data .buy-sell label, span {
+      .spotrate .data .buy-sell label,
+      span {
         font-size: 15px;
       }
 
@@ -469,11 +471,11 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+  <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
   <script type="module" src="./config/db.js"></script>
   <script type="module" defer src="./assets/js/core/displayNews.js"></script>
   <script type="module" src="./assets/js/core/dashboardDB.js"></script>
   <script type="module" src="./assets/js/core/spotrateDB.js"></script>
-  <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
 
   <script>
