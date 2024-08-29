@@ -83,58 +83,9 @@ async function fetchData() {
     goldAskingPrice = (goldSellUSD * 3.674).toFixed(4);
 }
 
-
-// Gold API KEY
-const API_KEY = 'goldapi-fbqpmirloto20zi-io'
-
 // Function to Fetch Gold API Data
 async function fetchData1() {
-    var myHeaders = new Headers();
-    myHeaders.append("x-access-token", API_KEY);
-    myHeaders.append("Content-Type", "application/json");
-
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
-
     try {
-        const responseGold = await fetch("https://www.goldapi.io/api/XAU/USD", requestOptions);
-        const responseSilver = await fetch("https://www.goldapi.io/api/XAG/USD", requestOptions);
-
-        if (!responseGold.ok && !responseSilver.ok) {
-            throw new Error('One or more network responses were not OK');
-        }
-
-        // const resultGold = await responseGold.json();
-        const resultSilver = await responseSilver.json();
-
-        // Adjust based on the actual API response structure
-        // var goldValueUSD = parseFloat(resultGold.price);
-        var silverValueUSD = parseFloat(resultSilver.price)
-
-        // document.getElementById('goldRate').textContent = '$' + goldValueUSD.toFixed(2);
-        // document.getElementById('silverRate').textContent = '$' + silverValueUSD.toFixed(3)
-
-        // var GoldUSDResult = (goldValueUSD / 31.1035).toFixed(4);
-        // goldValue = (GoldUSDResult * 3.67).toFixed(4);
-
-        var silverUSDResult = (silverValueUSD / 31.1035).toFixed(4)
-        silverValue = parseFloat(silverUSDResult * 3.67).toFixed(4)
-
-        // var goldLowValue = parseFloat(resultGold.low_price);
-        // var goldHighValue = parseFloat(resultGold.high_price);
-        var silverLowValue = parseFloat(resultSilver.low_price);
-        var silverHighValue = parseFloat(resultSilver.high_price);
-
-
-        // goldBuy = (goldValueUSD + bidSpread).toFixed(2);
-        // goldSell = (goldValueUSD + askSpread + parseFloat(0.5)).toFixed(2);
-        silverBuy = (silverValueUSD + silverBidSpread).toFixed(3);
-        silverSell = (silverValueUSD + silverAskSpread + parseFloat(0.05)).toFixed(3);
-
-
         var currentGoldBuy = goldBuy;
         var currentGoldSell = goldSell;
         var currentSilverBuy = silverBuy;
